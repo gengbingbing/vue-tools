@@ -27,14 +27,14 @@ let router = new Router({
       children: [
         {
           path: '/',
-          name: '变更总览',
+          name: '中国地图',
           components: {
             default: MainIndex,
             top: TopNav,
             aside: LeftNav
           },
           leaf: true,
-          iconCls: 'el-icon-setting',
+          // iconCls: 'el-icon-setting',
           menuShow: true,
           
         },
@@ -53,7 +53,7 @@ let router = new Router({
         },
         {
           path: '/enterprise/detail',
-          name: '企业详情',
+          name: '数字动画',
           components: {
             default: EnterpriseDetail,
             top: TopNav,
