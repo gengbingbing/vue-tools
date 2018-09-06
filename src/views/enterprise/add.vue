@@ -1,47 +1,12 @@
 <template>
   <div>
-    <p style="margin-bottom: 20px; font-weight: 500;">添加企业</p>
-    <el-form ref="form" :model="form" label-width="110px">
-      <el-col :span="12">
-        <el-form-item label="企业编号：">
-          <el-input v-model="form.number" placeholder="请输入企业编号"></el-input>
-        </el-form-item>
-        <el-form-item label="所属行业：">
-          <el-select v-model="form.industry" placeholder="请选择所属行业">
-            <el-option label="请选择所属行业" value="-1"></el-option>
-            <el-option label="金融业" value="1"></el-option>
-            <el-option label="IT业" value="2"></el-option>
-            <el-option label="工业" value="3"></el-option>
-            <el-option label="农林牧渔业" value="4"></el-option>
-          </el-select>
-        </el-form-item>
-        <el-form-item label="经营范围：">
-          <el-checkbox-group v-model="form.range">
-            <el-checkbox label="娱乐" name="range"></el-checkbox>
-            <el-checkbox label="教育" name="range"></el-checkbox>
-            <el-checkbox label="商业" name="range"></el-checkbox>
-            <el-checkbox label="工业" name="range"></el-checkbox>
-          </el-checkbox-group>
-        </el-form-item>
-      </el-col>
-      <el-col :span="12">
-        <el-form-item label="企业名称：">
-          <el-input v-model="form.name" placeholder="请输入企业名称"></el-input>
-        </el-form-item>
-        <el-form-item label="经营模式：">
-          <el-radio-group v-model="form.model">
-            <el-radio label="国有企业"></el-radio>
-            <el-radio label="民营企业"></el-radio>
-          </el-radio-group>
-        </el-form-item>
-        <el-form-item label="注册日期：">
-          <el-date-picker v-model="form.regDate" type="date" placeholder="选择日期"></el-date-picker>
-        </el-form-item>
-      </el-col>
-      <el-col :span="24">
-        <el-button type="primary" icon="el-icon-edit">保存添加</el-button>
-      </el-col>
-    </el-form>
+    <ul class="roll-ul" @mouseover="start()" @mouseout="end()">
+      <li v-for="item in list" ref="rollul" style="padding-bottom:20px" :class="{anim:animate==true}">
+          <span class="name">{{item.name}}</span><br>
+          <span class="site">{{item.site}}</span><br>
+          <span class="gsmc">{{item.gsmc}}</span><br>
+      </li>
+    </ul>
   </div>
 </template>
 <script>
@@ -55,9 +20,63 @@
           industry: '',
           model: '国有企业',
           range: [],
-          regDate: ''
-        }
+          regDate: '',
+        },
+        animate:true,
+        time:'',
+        list:[
+            {"name":"于先生1","site":"北京门头沟区1","gsmc":"柠檬树装饰1"},
+            {"name":"于先生2","site":"北京门头沟区2","gsmc":"柠檬树装饰2"},
+            {"name":"于先生3","site":"北京门头沟区3","gsmc":"柠檬树装饰3"},
+            {"name":"于先生4","site":"北京门头沟区4","gsmc":"柠檬树装饰4"},
+            {"name":"于先生5","site":"北京门头沟区5","gsmc":"柠檬树装饰5"},
+            {"name":"于先生6","site":"北京门头沟区6","gsmc":"柠檬树装饰6"},
+            {"name":"于先生7","site":"北京门头沟区7","gsmc":"柠檬树装饰7"},
+            {"name":"于先生8","site":"北京门头沟区8","gsmc":"柠檬树装饰8"},
+            {"name":"于先生9","site":"北京门头沟区9","gsmc":"柠檬树装饰9"},
+            {"name":"于先生10","site":"北京门头沟区10","gsmc":"柠檬树装饰10"},
+            {"name":"于先生11","site":"北京门头沟区11","gsmc":"柠檬树装饰11"}
+        ]
       };
+    },
+
+    methods: {
+      scroll(){
+        let con1 = this.$refs.rollul;
+        this.animate=!this.animate;
+        var that = this; // 在异步函数中会出现this的偏移问题，此处一定要先保存好this的指向
+        that.list.push(that.list[0]);
+        that.list.shift();
+        that.animate=!that.animate;  // 这个地方如果不把animate 取反会出现消息回滚的现象，此时把ul 元素的过渡属性取消掉就可以完美实现无缝滚动的效果了
+        console.log("*9*");
+      },
+      end() {
+        this.time = setInterval(this.scroll, 1000)
+      },
+      start() {
+        clearInterval(this.time); 
+      }
+    },
+    mounted: function (){ 
+      this.time = setInterval(this.scroll, 1000)
     }
   }
 </script>
+
+<style>
+  .newest-bill .nwwest-roll {
+    padding-left: 15px;
+    height: 210px;
+    margin: 10px auto;
+    overflow: hidden;
+     transition: all 0.5s;
+  }
+  .newest-bill .nwwest-roll li{
+    height: 35px;
+    line-height: 35px;
+  }
+
+  .anim{
+    transition: all 0.5s;
+  }
+</style>

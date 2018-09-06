@@ -65,7 +65,7 @@ let router = new Router({
         },
         {
           path: '/enterprise/add',
-          name: '添加企业',
+          name: 'vue跑马灯',
           components: {
             default: EnterpriseAdd,
             top: TopNav,
