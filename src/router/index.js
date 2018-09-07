@@ -40,7 +40,7 @@ let router = new Router({
         },
         {
           path: '/enterprise/index',
-          name: '企业信息',
+          name: '导出/入Excel',
           components: {
             default: EnterpriseList,
             top: TopNav,

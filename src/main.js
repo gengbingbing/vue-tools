@@ -3,6 +3,8 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 import echarts from 'echarts'
+import Blob from './vendor/Blob.js'
+import Export2Excel from './vendor/Export2Excel.js'
 
 import store from './store.js'
 import 'element-ui/lib/theme-chalk/index.css'
