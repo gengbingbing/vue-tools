@@ -1,12 +1,11 @@
 <template>
   <div>
-    <p>企业认证</p>
+    <p>上传图片（头像）</p>
 
     <el-upload class="avatar-uploader" name="avatar" action="/upload" :data="uploadData" :show-file-list="false" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
       <img v-if="imageUrl" :src="imageUrl" class="avatar">
       <i v-else class="el-icon-plus avatar-uploader-icon"></i>
     </el-upload>
-    <el-button type="primary" icon="el-icon-edit">认证</el-button>
   </div>
 </template>
 <style>
