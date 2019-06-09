@@ -11,6 +11,7 @@ import HorseRaceLamp from '@/views/tool/horseRaceLamp.vue'
 import UploadImg from '@/views/tool/uploadImg.vue'
 import elTable from '@/views/table/elTable.vue'
 import dgTable from '@/views/table/dgTable.vue'
+import treeTable from '@/views/table/treeTable.vue'
 
 // 懒加载方式，当路由被访问的时候才加载对应组件
 Vue.use(Router)
@@ -45,6 +46,19 @@ let router = new Router({
           name: 'dgTable 表格',
           components: {
             default: dgTable,
+            top: TopNav,
+            aside: LeftNav
+          },
+          leaf: true,
+          // iconCls: 'el-icon-setting',
+          menuShow: true,
+
+        },
+        {
+          path: '/treeTable',
+          name: 'treeTable 表格',
+          components: {
+            default: treeTable,
             top: TopNav,
             aside: LeftNav
           },
