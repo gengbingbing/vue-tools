@@ -76,6 +76,7 @@
       },
       renderHeaderInput(h, { column, $index }) {
         let columId = column.id
+        let display = `display: ${this.elGridOp.isSort}`
         return (<div>
                   <span>{ column.label }</span>
                   <el-popover 
@@ -85,6 +86,7 @@
                     height="300"
                     trigger="click">
                     <i class="el-icon-arrow-down" slot="reference"  columKey={$index} columnlable={column.label} on-click={this.popoverClick}></i>
+                    <i style={display} class="el-icon-sort" slot="reference"  columKey={$index} on-click={this.sortClick}></i>
                     <el-input
                       size="small"
                       placeholder="请输入"
@@ -98,6 +100,7 @@
                 </div>)
       },
       renderHeaderDate(h, { column, $index }) {
+        let display = `display: ${this.elGridOp.isSort}`
         return (<div>
                   <span>{ column.label }</span>
                   <el-popover 
@@ -107,6 +110,7 @@
                     height="300"
                     trigger="click">
                     <i class="el-icon-arrow-down" slot="reference" columKey={$index} columnLable={column.label} on-click={this.popoverClick}></i>
+                    <i style={display} class="el-icon-sort" slot="reference"  columKey={$index} on-click={this.sortClick}></i>
                     <el-date-picker
                       v-model={this.inputValDate}
                       type="daterange"
@@ -120,6 +124,7 @@
                 </div>)
       },
       renderHeaderMunsel(h, { column, $index }) {
+        let display = `display: ${this.elGridOp.isSort}`
         return (<div>
                   <span>{ column.label }</span>
                   <el-popover 
@@ -130,6 +135,7 @@
                     height="300"
                     trigger="click">
                     <i class="el-icon-arrow-down" slot="reference" columKey={$index} columnLable={column.label} on-click={this.popoverClick}></i>
+                    <i style={display} class="el-icon-sort" slot="reference"  columKey={$index} on-click={this.sortClick}></i>
                     <el-cascader
                       options={this.options}
                       props={this.props}
@@ -139,6 +145,9 @@
                     </el-cascader>
                   </el-popover>
                 </div>)
+      },
+      sortClick(e) {
+        this.$emit('sortData', e.target.attributes[0].value)
       },
       popoverClick(e) {
         console.log(e)

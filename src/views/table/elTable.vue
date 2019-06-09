@@ -6,7 +6,8 @@
       @handleSelectionChange='handleSelectionChange'
       @rowClick='rowClick'
       @cellClick='cellClick'
-      @filtersData='filtersData'>
+      @filtersData='filtersData'
+      @sortClick='sortClick'>
     </elGrid>
   </div>
 </template>
@@ -23,12 +24,14 @@ export default {
         return {
           title: 'elTable表格',
           elGridOp: {
+            // isSort字段为判断是否过滤， none为不过滤
             multipleTable: true,
             maxHeight: 600,
             border: true,
             size: 'mini',
             showHeader: true,
             resizable: true,
+            isSort: true,  
             colums: [{
               id: "name",
               prop:"name",
@@ -93,6 +96,9 @@ export default {
       },
       filtersData(val) {
         console.log('filtersData=========>', val)
+      },
+      sortClick(val) {
+        console.log('sortClick===========>', val)
       }
     },
 }
