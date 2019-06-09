@@ -10,6 +10,7 @@ import Animation from '@/views/tool/animation.vue'
 import HorseRaceLamp from '@/views/tool/horseRaceLamp.vue'
 import UploadImg from '@/views/tool/uploadImg.vue'
 import elTable from '@/views/table/elTable.vue'
+import dgTable from '@/views/table/dgTable.vue'
 
 // 懒加载方式，当路由被访问的时候才加载对应组件
 Vue.use(Router)
@@ -28,7 +29,7 @@ let router = new Router({
       children: [
         {
           path: '/',
-          name: 'elGrid表格',
+          name: 'elGrid 表格',
           components: {
             default: elTable,
             top: TopNav,
@@ -38,6 +39,19 @@ let router = new Router({
           // iconCls: 'el-icon-setting',
           menuShow: true,
           
+        },
+        {
+          path: '/dgTable',
+          name: 'dgTable 表格',
+          components: {
+            default: dgTable,
+            top: TopNav,
+            aside: LeftNav
+          },
+          leaf: true,
+          // iconCls: 'el-icon-setting',
+          menuShow: true,
+
         },
         {
           path: '/ChinaMap',
