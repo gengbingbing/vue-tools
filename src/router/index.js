@@ -12,6 +12,8 @@ import UploadImg from '@/views/tool/uploadImg.vue'
 import elTable from '@/views/table/elTable.vue'
 import dgTable from '@/views/table/dgTable.vue'
 import treeTable from '@/views/table/treeTable.vue'
+import treeTransfer from '@/views/treeTransfer/index.vue'
+import treeDragTransfer from '@/views/treeTransfer/treeDragTransfer.vue'
 
 // 懒加载方式，当路由被访问的时候才加载对应组件
 Vue.use(Router)
@@ -59,6 +61,32 @@ let router = new Router({
           name: 'treeTable 表格',
           components: {
             default: treeTable,
+            top: TopNav,
+            aside: LeftNav
+          },
+          leaf: true,
+          // iconCls: 'el-icon-setting',
+          menuShow: true,
+
+        },
+        {
+          path: '/treeTransfer',
+          name: '树形穿越框',
+          components: {
+            default: treeTransfer,
+            top: TopNav,
+            aside: LeftNav
+          },
+          leaf: true,
+          // iconCls: 'el-icon-setting',
+          menuShow: true,
+
+        },
+        {
+          path: '/treeDragTransfer',
+          name: '树形可拖拽穿越框',
+          components: {
+            default: treeDragTransfer,
             top: TopNav,
             aside: LeftNav
           },
