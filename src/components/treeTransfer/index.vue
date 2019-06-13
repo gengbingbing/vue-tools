@@ -51,13 +51,15 @@
                 filterTextRight: '',
                 leftSelData: [],
                 rightSelData: [],
+                rightAllData: [],
+                leftAllData: [],
                 defaultProps: {
                     children: 'children',
                     label: 'label'
                 }
             }
         },
-        props: ['rightAllData', 'leftAllData'],
+        props: ['op'],
         watch: {
             filterTextLeft(val) {
                 this.$refs.leftTree.filter(val);
@@ -97,6 +99,10 @@
                     this.rightAllChecked = false
                 }
             }
+        },
+        created() {
+            this.rightAllData = this.op.rightAllData
+            this.leftAllData = this.op.leftAllData
         },
 	    methods: {
             moveLeft() {
@@ -151,7 +157,7 @@
                 }
             },
             allowDrag(draggingNode) {
-                // return draggingNode.data.label.indexOf('三级 3-2-2') === -1;
+                return draggingNode.data.label.indexOf('三级 3-2-2') === -1;
             }
         }
 	}

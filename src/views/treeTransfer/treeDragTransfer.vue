@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<tree-transfer :rightAllData='rightAllData' :leftAllData='leftAllData'></tree-transfer>
+		<tree-transfer :op='op'></tree-transfer>
 	</div>
 </template>
 
@@ -9,19 +9,21 @@
 	export default {
 		data() {
 	    	return {
-	    		rightAllData: [],
-	    		leftAllData: [{
-                    id: 1,
-                    label: '一级 1'
-                }, 
-                {
-                    id: 2,
-                    label: '一级 2'
-                }, 
-                {
-                    id: 3,
-                    label: '一级 3'
-                }]
+	    		op: {
+		    		rightAllData: [],
+		    		leftAllData: [{
+	                    id: 1,
+	                    label: '一级 1'
+	                }, 
+	                {
+	                    id: 2,
+	                    label: '一级 2'
+	                }, 
+	                {
+	                    id: 3,
+	                    label: '一级 3'
+	                }]
+	    		}
 	    	}
 	    },
 	    components: {
