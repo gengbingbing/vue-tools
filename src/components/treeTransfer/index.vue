@@ -1,40 +1,50 @@
 <template>
-	<div class="treeTransfer">
-        <div class="leftTree floatLeft">
-            <span style="margin-left: 23px"><el-checkbox v-model="leftAllChecked"></el-checkbox>&nbsp;&nbsp;待选列</span>
-            <el-input size="mini" placeholder="输入关键字进行过滤" v-model="filterTextLeft"> </el-input>
-            <el-tree
-                show-checkbox
-                @check-change="handleLeftCheckChange"
-                ref="leftTree"
-                :filter-node-method="filterNode"
-                :data="leftAllData"
-                node-key="id"
-                default-expand-all>
-            </el-tree>
-        </div>
+    <div>
+    	<div class="treeTransfer">
+            <div class="leftTree floatLeft">
+                <span style="margin-left: 23px"><el-checkbox v-model="leftAllChecked"></el-checkbox>&nbsp;&nbsp;待选列</span>
+                <el-input size="mini" placeholder="输入关键字进行过滤" v-model="filterTextLeft"> </el-input>
+                <el-tree
+                    show-checkbox
+                    :check-on-click-node="op.checkOnClickNode"
+                    @check-change="handleLeftCheckChange"
+                    ref="leftTree"
+                    :filter-node-method="filterNode"
+                    :data="leftAllData"
+                    node-key="id"
 
-        <div class="floatLeft m20 mt15">
-            <el-button type="primary" size="mini" round class="mB10" @click="moveLeft"><i class="el-icon-arrow-right"></i></el-button>
-            <br>
-            <el-button type="primary" size="mini" round  @click="moveRight"><i class="el-icon-arrow-left"></i></el-button>
-        </div>
+                    default-expand-all>
+                </el-tree>
+            </div>
 
-        <div class="rightTree floatLeft">
-            <span style="margin-left: 23px"><el-checkbox v-model="rightAllChecked"></el-checkbox>&nbsp;&nbsp;已选列</span>
-            <el-input size="mini" placeholder="输入关键字进行过滤" v-model="filterTextRight"> </el-input>
-            <el-tree
-                show-checkbox
-                @check-change="handleRightCheckChange"
-                ref="rightTree"
-                :filter-node-method="filterNode"
-                :data="rightAllData"
-                node-key="id"
-                default-expand-all
-                draggable
-                :allow-drop="allowDrop"
-                :allow-drag="allowDrag">
-            </el-tree>
+            <div class="floatLeft m20 mt15">
+                <el-button type="primary" size="mini" round class="mB10" @click="moveLeft"><i class="el-icon-arrow-right"></i></el-button>
+                <br>
+                <el-button type="primary" size="mini" round  @click="moveRight"><i class="el-icon-arrow-left"></i></el-button>
+            </div>
+
+            <div class="rightTree floatLeft">
+                <span style="margin-left: 23px"><el-checkbox v-model="rightAllChecked"></el-checkbox>&nbsp;&nbsp;已选列</span>
+                <el-input size="mini" placeholder="输入关键字进行过滤" v-model="filterTextRight"> </el-input>
+                <el-tree
+                    show-checkbox
+                    :check-on-click-node="op.checkOnClickNode"
+                    @check-change="handleRightCheckChange"
+                    ref="rightTree"
+                    :filter-node-method="filterNode"
+                    :data="rightAllData"
+                    node-key="id"
+                    default-expand-all
+                    draggable
+                    :allow-drop="allowDrop"
+                    :allow-drag="allowDrag">
+                </el-tree>
+            </div>
+        </div>
+        <br>
+        <div style="text-align: center">
+            <el-button size="mini" type="primary">确定</el-button>
+            <el-button size="mini">取消</el-button>
         </div>
     </div>
 </template>
@@ -199,5 +209,7 @@
     }
     .treeTransfer {
         margin-left: 20%;
+        width: 80%;
+        height: 420px;
     }
 </style>

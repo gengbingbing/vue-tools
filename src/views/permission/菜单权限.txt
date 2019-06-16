@@ -1,0 +1,97 @@
+ menuList: [{
+                    menuName: "全部",
+                    menuId: "0",
+                    "menuType": "0",
+                    checked: false,
+                },
+                {
+                    "menuId": "4000",
+                    "menuCode": null,
+                    "menuName": "菜单1",
+                    "parentId": "0",
+                    "menuType": "0",
+                    "roleType": "3",
+                    checked: false,
+                    "listDiffPermissionViewVO": []
+                },
+                {
+                    "menuId": "4001",
+                    "menuCode": null,
+                    "menuName": "菜单2",
+                    "parentId": "0",
+                    "menuType": "0",
+                    "roleType": "3",
+                    checked: false,
+                    "listDiffPermissionViewVO": []
+                },
+                {
+                    "menuId": "4002",
+                    "menuCode": null,
+                    "menuName": "菜单3",
+                    "parentId": "0",
+                    "menuType": "0",
+                    "roleType": "3",
+                    checked: false,
+                    "listDiffPermissionViewVO": [{
+                            "menuId": "4003",
+                            "menuCode": null,
+                            "menuName": "菜单4",
+                            "parentId": "4002",
+                            "menuType": "0",
+                            "roleType": "3",
+                            checked: false,
+                            "listDiffPermissionViewVO": [{
+                                    "menuId": "4006",
+                                    "menuCode": null,
+                                    "menuName": "按钮2",
+                                    "parentId": "4003",
+                                    "menuType": "1",
+                                    "roleType": "3",
+                                    checked: false,
+                                    "listDiffPermissionViewVO": []
+                                },
+                                {
+                                    "menuId": "4011",
+                                    "menuCode": null,
+                                    "menuName": "菜单5",
+                                    "parentId": "4003",
+                                    "menuType": "0",
+                                    "roleType": "3",
+                                    checked: false,
+                                    "listDiffPermissionViewVO": [{
+                                            "menuId": "3312",
+                                            "menuCode": null,
+                                            "menuName": "菜单6",
+                                            "parentId": "4011",
+                                            "menuType": "0",
+                                            "roleType": "3",
+                                            checked: false,
+                                            "listDiffPermissionViewVO": []
+                                        },
+                                        {
+                                            "menuId": "4012",
+                                            "menuCode": null,
+                                            "menuName": "按钮3",
+                                            "parentId": "4011",
+                                            "menuType": "1",
+                                            "roleType": "3",
+                                            checked: false,
+                                            "listDiffPermissionViewVO": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "menuId": "4005",
+                            "menuCode": null,
+                            "menuName": "按钮1",
+                            "parentId": "4002",
+                            "menuType": "1",
+                            "roleType": "3",
+                            checked: false,
+                            "listDiffPermissionViewVO": []
+                        }
+                    ]
+                }
+            ]

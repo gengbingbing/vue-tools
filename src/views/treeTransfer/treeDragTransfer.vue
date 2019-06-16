@@ -10,6 +10,7 @@
 		data() {
 	    	return {
 	    		op: {
+	    			checkOnClickNode: true,
 		    		rightAllData: [],
 		    		leftAllData: [{
 	                    id: 1,

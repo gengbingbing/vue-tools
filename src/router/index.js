@@ -14,6 +14,8 @@ import dgTable from '@/views/table/dgTable.vue'
 import treeTable from '@/views/table/treeTable.vue'
 import treeTransfer from '@/views/treeTransfer/index.vue'
 import treeDragTransfer from '@/views/treeTransfer/treeDragTransfer.vue'
+import selectTable from '@/views/select/index.vue'
+// import permission from '@/views/permission/index.vue'
 
 // 懒加载方式，当路由被访问的时候才加载对应组件
 Vue.use(Router)
@@ -87,6 +89,19 @@ let router = new Router({
           name: '树形可拖拽穿越框',
           components: {
             default: treeDragTransfer,
+            top: TopNav,
+            aside: LeftNav
+          },
+          leaf: true,
+          // iconCls: 'el-icon-setting',
+          menuShow: true,
+
+        },
+        {
+          path: '/selectTable',
+          name: '下拉表格(带复选框)',
+          components: {
+            default: selectTable,
             top: TopNav,
             aside: LeftNav
           },
