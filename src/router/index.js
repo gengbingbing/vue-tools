@@ -24,10 +24,6 @@ Vue.use(Router)
 let router = new Router({
   routes: [
     {
-      path: '*',
-      component: Home
-    },
-    {
       path: '/',
       name: 'home',
       component: Home,
