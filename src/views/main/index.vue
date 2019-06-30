@@ -1,5 +1,5 @@
 <template>
-  <div id="main" style="width: 600px;height:400px;"></div>
+  <div id="main" style="width: 100%;height:400px;"></div>
 </template>
 <script>
   import echarts from 'echarts'
@@ -103,14 +103,14 @@
             tooltip: {
                 trigger: 'item'
             },
-            visualMap: {
+            /*visualMap: {
                 min: 0,
                 max: 100,
                 calculable: true,
                 inRange: {
                     color: ['#ffffff', '#E0DAFF', '#ADBFFF', '#9CB4FF', '#6A9DFF', '#3889FF']
                 }
-            },
+            },*/
             geo: {
                 map: 'china',
                 zoom: 1.2,
