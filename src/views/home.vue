@@ -2,7 +2,7 @@
   <el-row class="container">
     <!--头部-->
     <!-- <el-col :span="24"><router-view name="top"></router-view></el-col> -->
-    <el-col :span="24" class="main">
+    <el-col :span="24" class="main" style="top: 0px">
       <!--左侧导航-->
       <router-view name="aside"></router-view>
       <!--右侧内容区-->

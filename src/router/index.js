@@ -16,6 +16,7 @@ import treeTable from '@/views/table/treeTable.vue'
 import treeTransfer from '@/views/treeTransfer/index.vue'
 import treeDragTransfer from '@/views/treeTransfer/treeDragTransfer.vue'
 import selectTable from '@/views/select/index.vue'
+import tableChoice from '@/views/table/tableChoice.vue'
 // import permission from '@/views/permission/index.vue'
 
 // 懒加载方式，当路由被访问的时候才加载对应组件
@@ -34,7 +35,7 @@ let router = new Router({
           name: 'elGrid 表格',
           components: {
             default: elTable,
-            top: TopNav,
+            // top: TopNav,
             aside: LeftNav
           },
           leaf: true,
@@ -47,7 +48,7 @@ let router = new Router({
           name: 'dgTable 表格',
           components: {
             default: dgTable,
-            top: TopNav,
+            // top: TopNav,
             aside: LeftNav
           },
           leaf: true,
@@ -60,7 +61,7 @@ let router = new Router({
           name: '自定义treeTable',
           components: {
             default: indexTreeTable,
-            top: TopNav,
+            // top: TopNav,
             aside: LeftNav
           },
           leaf: true,
@@ -73,7 +74,20 @@ let router = new Router({
           name: 'treeTable 表格',
           components: {
             default: treeTable,
-            top: TopNav,
+            // top: TopNav,
+            aside: LeftNav
+          },
+          leaf: true,
+          // iconCls: 'el-icon-setting',
+          menuShow: true,
+
+        },
+        {
+          path: '/tableChoice',
+          name: '表格弹出选择框',
+          components: {
+            default: tableChoice,
+            // top: TopNav,
             aside: LeftNav
           },
           leaf: true,
@@ -86,7 +100,7 @@ let router = new Router({
           name: '树形穿越框',
           components: {
             default: treeTransfer,
-            top: TopNav,
+            // top: TopNav,
             aside: LeftNav
           },
           leaf: true,
@@ -99,7 +113,7 @@ let router = new Router({
           name: '树形可拖拽穿越框',
           components: {
             default: treeDragTransfer,
-            top: TopNav,
+            // top: TopNav,
             aside: LeftNav
           },
           leaf: true,
@@ -112,7 +126,7 @@ let router = new Router({
           name: '下拉表格(带复选框)',
           components: {
             default: selectTable,
-            top: TopNav,
+            // top: TopNav,
             aside: LeftNav
           },
           leaf: true,
@@ -125,7 +139,7 @@ let router = new Router({
           name: '中国地图',
           components: {
             default: MainIndex,
-            top: TopNav,
+            // top: TopNav,
             aside: LeftNav
           },
           leaf: true,
@@ -138,7 +152,7 @@ let router = new Router({
           name: '导出/入Excel',
           components: {
             default: Export,
-            top: TopNav,
+            // top: TopNav,
             aside: LeftNav
           },
           leaf: true,
@@ -151,7 +165,7 @@ let router = new Router({
           name: '数字动画',
           components: {
             default: Animation,
-            top: TopNav,
+            // top: TopNav,
             aside: LeftNav
           },
           leaf: true,
@@ -163,7 +177,7 @@ let router = new Router({
           name: 'vue跑马灯',
           components: {
             default: HorseRaceLamp,
-            top: TopNav,
+            // top: TopNav,
             aside: LeftNav
           },
           leaf: true,
@@ -175,7 +189,7 @@ let router = new Router({
           name: '上传图片',
           components: {
             default: UploadImg,
-            top: TopNav,
+            // top: TopNav,
             aside: LeftNav
           },
           leaf: true,
