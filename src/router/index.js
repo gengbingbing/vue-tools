@@ -17,7 +17,7 @@ import treeTransfer from '@/views/treeTransfer/index.vue'
 import treeDragTransfer from '@/views/treeTransfer/treeDragTransfer.vue'
 import selectTable from '@/views/select/index.vue'
 import tableChoice from '@/views/table/tableChoice.vue'
-// import permission from '@/views/permission/index.vue'
+import MarkdownEditor from '@/views/markdown/editor.vue'
 
 // 懒加载方式，当路由被访问的时候才加载对应组件
 Vue.use(Router)
@@ -189,6 +189,18 @@ let router = new Router({
           name: '上传图片',
           components: {
             default: UploadImg,
+            // top: TopNav,
+            aside: LeftNav
+          },
+          leaf: true,
+          // iconCls: 'el-icon-menu',
+          menuShow: true
+        }, 
+        {
+          path: '/markdown',
+          name: 'vue-markdown-editor',
+          components: {
+            default: MarkdownEditor,
             // top: TopNav,
             aside: LeftNav
           },
